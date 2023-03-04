@@ -1,0 +1,100 @@
+body {
+  background-color: aqua;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 0;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  background-color: blue;
+  height: min-content;
+  padding: 10px;
+}
+
+.child-1 {
+  background-color: rgb(3, 185, 3);
+  visibility: visible;
+}
+.child-2 {
+  background-color: crimson;
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  padding: 10px;
+}
+
+.navbar {
+  background-color: rgb(2, 80, 2);
+  color: white;
+}
+
+.content {
+  background-color: rgb(255, 238, 0);
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding: 10px;
+  column-gap: 10px;
+  height: 150vh;
+}
+
+.main {
+  background-color: rgb(50, 3, 94);
+  display: grid;
+  grid-template-rows: 2fr 4fr;
+  row-gap: 10px;
+  padding: 10px;
+}
+
+.sidebar {
+  background-color: rgb(75, 44, 4);
+  display: grid;
+  grid-template-rows: 2fr 3fr;
+  row-gap: 10px;
+  padding: 10px;
+}
+
+.landing {
+  background-color: cadetblue;
+}
+
+.explore {
+  background-color: chartreuse;
+}
+
+.top-artist {
+  background-color: cyan;
+}
+
+.recent-activity {
+  background-color: darkgoldenrod;
+}
+#open,
+#close {
+  display: none;
+}
+
+@media (width<=1000px) {
+  .content {
+    grid-template-columns: 1fr;
+    height: 200vh;
+  }
+}
+@media (width<=700px) {
+  .parent {
+    grid-template-columns: 1fr;
+  }
+  .child-1 {
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    position: fixed;
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+  }
+  #open,
+  #close {
+    display: inline;
+  }
+}
